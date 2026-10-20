@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Arena</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+    <script src="game.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #101827;
+            color: white;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 6px 4px;
+            cursor: pointer;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .panel {
+            background: #1e293b;
+            padding: 18px;
+            margin: 16px 0;
+            border-radius: 12px;
+        }
+
+        #status {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+<body>
+    <h1>Token Arena</h1>
+    <p>Play with STUD and GAME on Sepolia.</p>
+
+    <div class="panel">
+        <button id="connectButton">Connect MetaMask</button>
+        <p id="wallet">Wallet: not connected</p>
+        <p id="network">Network: not checked</p>
+        <p id="balances">Token balances: —</p>
+    </div>
+
+    <div class="panel">
+        <h2>Rules</h2>
+        <ul>
+            <li>You need at least 1 STUD and 1 GAME.</li>
+            <li>Each session has 3 actions.</li>
+            <li>Attack gives 2 points.</li>
+            <li>Defend gives 1 point.</li>
+            <li>You cannot attack twice in a row.</li>
+            <li>Your score is saved on the blockchain.</li>
+        </ul>
+    </div>
+
+    <div class="panel">
+        <h2>Your game</h2>
+        <button id="startButton" disabled>Start session</button>
+        <button id="attackButton" disabled>Attack (+2)</button>
+        <button id="defendButton" disabled>Defend (+1)</button>
+        <p id="score">Score: —</p>
+        <p id="sessions">Completed sessions: —</p>
+        <p id="actions">Actions in current session: —</p>
+    </div>
+
+    <div class="panel">
+        <h2>Status</h2>
+        <p id="status">Connect your wallet to begin.</p>
+    </div>
+</body>
+</html>
